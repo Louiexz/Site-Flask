@@ -1,0 +1,63 @@
+:root {
+    --black: #000;
+	--light-black: #333;
+	--white: #fff;
+    --gray: #777;
+    --light-gray: #999
+}
+body { margin: 0px;
+    font-size: 110%;
+    height: 90vh
+}
+a { text-decoration: none;
+    display: block;
+    clear: both
+}
+.navbar { background-color: var(--gray) }
+#brand-img { width: 40px; margin-right: 5px }
+.nav-link, .nav-link-active, .conversar, .conversar:hover, .nav-brand { margin: 5px;
+    font-size: 20px;
+    color: var(--black);
+}
+.nav-link:hover, .nav-link-active { color: var(--white) }
+.home { background-color: var(--light-black);
+    text-align: center;
+    padding: 3% 2%;
+    color: var(--white);
+    min-height: 96.5%;
+}
+#area-chat { background-color: var(--light-gray);
+    min-height: 400px;
+    overflow: auto;
+}
+#message, #envio { position: fixed;
+    top: 92%;
+}
+#message { width: 80% }
+#envio { left: 85%;
+    color: var(--black);
+    padding: 5px;
+}
+.eu, .estranho { color: var(--black);
+    margin: 1% 5%;
+    position: relative;
+    top: auto;
+}
+.eu { text-align: right }
+.estranho { text-align: left }
+.conversar:hover { background-color: var(--light-gray); }
+.conversar { padding: 10px;
+    font-size: 24px;
+}
+#avisos { display: flex;
+    margin-top: 6%;
+    gap: 10px;
+    text-align: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 100%
+}
+.avisos-item-img { width: 110px; }
+.avisos-item { max-width: 250px;
+    flex: 1;
+}

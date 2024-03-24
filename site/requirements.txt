@@ -1,2 +1,2 @@
-Flask
-click
+flask
+flask_socketio

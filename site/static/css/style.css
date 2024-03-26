@@ -35,16 +35,8 @@ a { text-decoration: none;
 }
 #message { width: 80% }
 #envio { left: 85%;
-    color: var(--black);
-    padding: 5px;
+    padding: 5px
 }
-.eu, .estranho { color: var(--black);
-    margin: 1% 5%;
-    position: relative;
-    top: auto;
-}
-.eu { text-align: right }
-.estranho { text-align: left }
 .conversar:hover { background-color: var(--light-gray); }
 .conversar { padding: 10px;
     font-size: 24px;

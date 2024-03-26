@@ -30,10 +30,9 @@ def pegaUser():
 def handle_connect(): enviar_mensagem('Usuário conectado')
 
 @socketio.on('disconnect')
-def handle_disconnected(): enviar_mensagem('Usuário desconectado ' + str(user_id), False)
+def handle_disconnected(): enviar_mensagem('Usuário desconectado', False)
 
 @socketio.on('message')
 def handle_message(data): enviar_mensagem(data)
 
-if __name__ == "__main__":
-    socketio.run(app)
+if __name__ == "__main__": socketio.run(app)

@@ -1,0 +1,10 @@
+.navbar {
+    background-color: var(--gray)
+}
+#brand-img {
+    width: 40px;
+    margin-right: 5px
+}
+.nav-link:hover, .nav-link-active {
+    color: var(--white)
+}

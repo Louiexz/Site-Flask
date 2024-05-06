@@ -1,0 +1,14 @@
+.home {
+    background-color: var(--light-black);
+    text-align: center;
+    padding: 3% 2%;
+    color: var(--white);
+    min-height: 96.5%;
+}
+.conversar {
+    padding: 10px;
+    font-size: 24px;
+}
+.conversar:hover {
+    background-color: var(--light-gray);
+}

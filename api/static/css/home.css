@@ -1,9 +1,9 @@
 .home {
-    background-color: var(--light-black);
-    text-align: center;
-    padding: 3% 2%;
+    padding: 35px 2%;
     color: var(--white);
-    min-height: 96.5%;
+}
+.home section {
+    text-align: center;
 }
 .conversar {
     padding: 10px;

@@ -2,29 +2,37 @@
     margin: 0px;
     padding: 0px;
     box-sizing: border-box;
+    font-size: max(100%, 1.2rem);
 }
 :root {
     --black: #080808;
-	--light-black: #333;
+	--light-black: #4e4e4e;
 	--white: #fff;
     --gray: #777;
     --light-gray: #999
 }
-a { text-decoration: none;
+main {
+    background-color: var(--light-black);
+    min-height: 90vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.home, .about {
+    justify-content: space-evenly;
+}
+a {
+    text-decoration: none;
     display: block;
-    clear: both
+    clear: both;
+    color: var(--light-gray)
 }
 .nav-link, .nav-link-active, .conversar, .conversar:hover, .nav-brand {
     margin: 5px;
     font-size: 20px;
     color: var(--black);
 }
-main {
-    background-color: var(--light-black);
-    font-size: 110%;
-    min-height: 95vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
+h1, p {
+    color: var(--black);
+    text-align: center;
 }

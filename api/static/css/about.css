@@ -1,8 +1,0 @@
-.about {
-    justify-content: center;
-    gap: 80px
-}
-h1, p {
-    color: var(--light-gray);
-    text-align: center;
-}

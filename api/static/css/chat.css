@@ -1,18 +1,24 @@
+#area-chat, #interacao {
+    min-width: 93vw;
+}
 #area-chat {
     background-color: var(--light-gray);
-    min-height: 400px;
-    width: 90vw;
+    min-height: 75vh;
     overflow: auto;
+}
+#interacao {
+    text-align: center;
 }
 #mensagem, #envio {
     position: relative;
-    top: 5px;
+    background-color: black;
+    color: white;
 }
-#mensagem {
-    width: 85%
+#mensagem{
+    width: 90%
 }
 #envio {
-    top: -34px;
-    left: 86%;
-    padding: 5px
+    top: -43px;
+    float: right;
+    padding: 1px
 }

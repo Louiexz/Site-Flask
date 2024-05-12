@@ -7,9 +7,9 @@ app.config['SECRET_KEY'] = os.urandom(24)
 
 socketio = SocketIO(app)
 
-from routes.home import home_blueprint
-from routes.chat import chat_blueprint
-from routes.about import about_blueprint
+from api.routes.home import home_blueprint
+from api.routes.chat import chat_blueprint
+from api.routes.about import about_blueprint
 
 app.register_blueprint(home_blueprint, url_prefix="/")
 app.register_blueprint(chat_blueprint, url_prefix="/chat")

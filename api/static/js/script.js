@@ -1,19 +1,18 @@
-// Conectando ao servidor SocketIO
-const socket = io.connect(`http://${document.domain}:${location.port}`);
-
-// Função executada quando a conexão é estabelecida
-// Função executada quando a conexão é estabelecida
-socket.on('connect', function() {
-    // Envia uma mensagem indicando que o usuário se conectou
-    socket.send({'username': '', 'msg': 'Usuário conectado!', 'sender_sid': socket.id});
-    console.log('Conectado');
-    
+function conectar() {
+    // Conectando ao servidor SocketIO
+    const socket = io.connect(`http://${document.domain}:${location.port}`);
+    // Função executada quando a conexão é estabelecida
+        socket.on('connect', function() {
+        // Envia uma mensagem indicando que o usuário se conectou
+        socket.send({'username': '', 'msg': 'Usuário conectado!', 'sender_sid': socket.id});
+        console.log('Conectado');
+    });
     // Define a função de manipulação de eventos para mensagens recebidas
     socket.on('message', function(data) {
         console.log(data);
         $('#area-chat').append($('<p><strong>' + data.username + '</strong>: ' + data.msg + '</p>'));
     });
-});
+}
 
 // Função para enviar mensagem
 function enviarMensagem() {

@@ -11,10 +11,10 @@ function conectar() {
         $('#conectar').hide();
     });
     // Define a função de manipulação de eventos para mensagens recebidas
-    socket.on('message', function(data) {
-        $('#area-chat').append($('<p><strong>' + data.username + '</strong>: ' + data.msg + '</p>'));
-    });
 }
+socket.on('message', function(data) {
+    $('#area-chat').append($('<p><strong>' + data.username + '</strong>: ' + data.msg + '</p>'));
+});
 
 // Função para enviar mensagem
 function enviarMensagem() {
@@ -33,7 +33,7 @@ function enviarMensagem() {
 // Evento DOMContentLoaded para garantir que o código seja executado após o carregamento do DOM
 $(document).ready(function() {
     // Evento de click para conectar-se
-    // $('#conectar').click(conectar);
+    $('#conectar').click(conectar);
 
     // Define o evento de clique para o botão de envio de mensagem
     $('#envio').click(enviarMensagem);

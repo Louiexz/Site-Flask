@@ -1,7 +1,8 @@
-var socket = io.connect(`http://${document.domain}:${location.port}`);
+var socket;
 
 function conectar() {
     // Conectando ao servidor SocketIO
+    socket = io.connect(`//${document.domain}:${location.port}`);
     // Função executada quando a conexão é estabelecida
         socket.on('connect', function() {
         // Envia uma mensagem indicando que o usuário se conectou

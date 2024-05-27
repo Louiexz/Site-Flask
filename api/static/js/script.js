@@ -1,11 +1,15 @@
+var socket;
+
 function conectar() {
     // Conectando ao servidor SocketIO
-    const socket = io.connect(`http://${document.domain}:${location.port}`);
+    socket = io.connect(`http://${document.domain}:${location.port}`);
     // Função executada quando a conexão é estabelecida
         socket.on('connect', function() {
         // Envia uma mensagem indicando que o usuário se conectou
         socket.send({'username': '', 'msg': 'Usuário conectado!', 'sender_sid': socket.id});
         console.log('Conectado');
+
+        $('#conectar').hide();
     });
     // Define a função de manipulação de eventos para mensagens recebidas
     socket.on('message', function(data) {
@@ -30,6 +34,9 @@ function enviarMensagem() {
 
 // Evento DOMContentLoaded para garantir que o código seja executado após o carregamento do DOM
 $(document).ready(function() {
+    // Evento de click para conectar-se
+    $('#conectar').click(conectar);
+
     // Define o evento de clique para o botão de envio de mensagem
     $('#envio').click(enviarMensagem);
     

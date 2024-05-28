@@ -2,20 +2,21 @@ var socket;
 
 function conectar() {
     // Conectando ao servidor SocketIO
-    socket = io.connect(`https://${document.domain}:${location.port}`);
+    $('#conectar').hide();
+    try {
+        socket = io.connect(`//${document.domain}:${location.port}`);
+        // Função executada quando a conexão é estabelecida
+        socket.on('connect', function() {
+            // Envia uma mensagem indicando que o usuário se conectou
+            socket.send({'username': '', 'msg': 'Usuário conectado!', 'sender_sid': socket.id});
 
-    // Função executada quando a conexão é estabelecida
-    socket.on('connect', function() {
-        // Envia uma mensagem indicando que o usuário se conectou
-        socket.send({'username': '', 'msg': 'Usuário conectado!', 'sender_sid': socket.id});
+        });
 
-        $('#conectar').hide();
-    });
-
-    // Define a função de manipulação de eventos para mensagens recebidas
-    socket.on('message', function(data) {
-        $('#area-chat').append($('<p><strong>' + data.username + '</strong>: ' + data.msg + '</p>'));
-    });
+        // Define a função de manipulação de eventos para mensagens recebidas
+        socket.on('message', function(data) {
+            $('#area-chat').append($('<p><strong>' + data.username + '</strong>: ' + data.msg + '</p>'));
+        });
+    } catch (e) { console.log('Erro encontrado: ' + e) }
 }
 
 // Função para enviar mensagem
@@ -35,7 +36,7 @@ function enviarMensagem() {
 // Evento DOMContentLoaded para garantir que o código seja executado após o carregamento do DOM
 $(document).ready(function() {
     // Evento de click para conectar-se
-    // $('#conectar').click(conectar);
+    $('#conectar').click(conectar);
 
     // Define o evento de clique para o botão de envio de mensagem
     $('#envio').click(enviarMensagem);

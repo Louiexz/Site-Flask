@@ -12,3 +12,19 @@
 .conversar:hover {
     background-color: var(--light-gray);
 }
+
+#avisos {
+    display: flex;
+    gap: 10px;
+    text-align: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 100%
+}
+.avisos-item-img {
+    max-width: 110px;
+}
+.avisos-item {
+    max-width: 250px;
+    flex: 1;
+}

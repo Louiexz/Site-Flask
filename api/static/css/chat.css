@@ -15,6 +15,7 @@
     color: white;
 }
 #conectar {
+    display: none;
     position: relative;
     top: 90vh;
 }

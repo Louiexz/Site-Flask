@@ -20,8 +20,6 @@ app.register_blueprint(home_blueprint, url_prefix="/")
 app.register_blueprint(chat_blueprint, url_prefix="/chat")
 app.register_blueprint(about_blueprint, url_prefix="/about")
 
-from collections import defaultdict
-
 # Dicionário para armazenar os usuários conectados e o valor associado a "Anonymous"
 usuarios_conectados = {}
 # Contador para atribuir valores únicos em "Anonymous"
@@ -33,9 +31,13 @@ def handle_message(data):
     sender_sid = data.get('sender_sid')
     username_slice_start = data.get('username_slice_start')
     username_slice_end = data.get('username_slice_end')
-    username = usuarios_conectados.get(sender_sid, f'Anônimo{contador_anonymous}')[username_slice_start:username_slice_end]
+    username = usuarios_conectados.get(
+        sender_sid, f'Anônimo{contador_anonymous}'
+        )[username_slice_start:username_slice_end]
     message = data.get('msg')
-    send({'username': username, 'msg': message}, broadcast=True, include_self=True)
+    send({'username': username,'msg': message },
+        broadcast=True, include_self=True)
+
 
 # Função para manipular conexões de cliente
 @socketio.on('connect')
@@ -46,11 +48,22 @@ def handle_connect():
     usuarios_conectados[request.sid] = username
     contador_anonymous += 1
 
+
 # Função para manipular desconexões de cliente
 @socketio.on('disconnect')
 def handle_disconnected():
+    global contador_anonymous
     global usuarios_conectados
-    if request.sid in usuarios_conectados: del usuarios_conectados[request.sid]
+
+    if request.sid in usuarios_conectados:
+        for i in range(len(usuarios_conectados) - 1, -1, -1):
+            if contador_anonymous > 0:
+                contador_anonymous -= 1
+                usuarios_conectados[i] = f'Anônimo{contador_anonymous}'
+            else:
+                break
+        del usuarios_conectados[request.sid]
+
 
 # Verifica se o script está sendo executado diretamente
 if __name__ == "__main__":

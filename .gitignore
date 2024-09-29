@@ -1,1 +1,4 @@
 __pycache__/
+.chatvenv
+.vercel
+server.txt

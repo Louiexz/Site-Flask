@@ -5,8 +5,9 @@
 
 #area-chat {
     background-color: var(--light-gray);
-    min-height: 75vh;
+    min-height: 75dvh;
     overflow: auto;
+    max-height: 77dvh;
 }
 
 #interacao {
@@ -21,6 +22,7 @@
 }
 
 #conectar {
+    display: none;
     position: relative;
     top: 0px;
 }

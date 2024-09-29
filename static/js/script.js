@@ -35,6 +35,10 @@ function conectar() {
                 ),
             );
             $("#area-chat")[0].scrollIntoView();
+            if (document.hidden) {
+                var audio = new Audio('/static/sound/level-up.mp3');
+                audio.play();
+            }
         });
     } catch (e) {
         console.log("Erro encontrado: " + e);

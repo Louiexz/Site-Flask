@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block title %}Início{% endblock %}
+
+{% block main %}
+    <main class="home">
+        <section>
+            <img class="avisos-item-img" src="{{url_for('static', filename='img/bubble-chat.png')}}" author=//www.freepik.com>
+            <h1>Chatzin</h1>
+            <p>
+                Se divirta falando com desconhecidos
+            </p>
+        </section>
+        <a href=chat><button class="btn conversar">Conversar</button></a>
+        <div id="avisos">
+            <div class="avisos-item">
+                <img class="avisos-item-img" src="{{url_for('static', filename='img/settings.png')}}" author="//www.flaticon.com/authors/pixel-perfect">
+                <h2>Teste</h2>
+                <p>Ainda em fase de testes.</p>
+            </div>
+            <div class="avisos-item">
+                <img class="avisos-item-img" src="{{url_for('static', filename='img/new.png')}}" author=//www.freepik.com>
+                <h2>Novo</h2>
+                <p>Feito para você, ajude-nos com seu feedback.</p>
+            </div>
+            <div class="avisos-item">
+                <img class="avisos-item-img" src="{{url_for('static', filename='img/nodata.png')}}" author=//www.flaticon.com/authors/yaicon>
+                <h2>Sem dados</h2>
+                <p>Fique tranquilo, não coletamos e nem usaremos seus dados.</p>
+            </div>
+        </div>
+    </main>
+{% endblock %}

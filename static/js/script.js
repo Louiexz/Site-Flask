@@ -1,10 +1,12 @@
 var socket;
+const audio = new Audio('/static/sound/level-up.mp3');
 
 function conectar() {
     // Conectando ao servidor SocketIO
     $("#conectar").hide();
     try {
-        socket = io.connect(`//${document.domain}:${location.port}`);
+        socket = io.connect(`//${document.domain}:${location.port}`)
+
         // Função executada quando a conexão é estabelecida
         socket.on("connect", function () {
             // Envia uma mensagem indicando que o usuário se conectou
@@ -36,7 +38,6 @@ function conectar() {
             );
             $("#area-chat")[0].scrollIntoView();
             if (document.hidden) {
-                var audio = new Audio('/static/sound/level-up.mp3');
                 audio.play();
             }
         });
@@ -57,8 +58,6 @@ function enviarMensagem() {
             msg: mensagemInput,
             sender_sid: socket.id,
         });
-
-        // Limpa o campo de mensagem após o envio
         $("#mensagem").val("");
     }
 }

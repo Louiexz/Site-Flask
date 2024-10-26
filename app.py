@@ -1,7 +1,7 @@
 import os
 import re
 
-from flask import Flask, render_template, request
+from flask import Flask, request
 from flask_socketio import SocketIO, send
 
 # Dicionário para armazenar os usuários conectados
@@ -15,7 +15,7 @@ app = Flask(__name__)
 app.config['SECRET_KEY'] = os.urandom(24)
 
 # Inicialização do SocketIO associado ao aplicativo Flask
-socketio = SocketIO(app)
+socketio = SocketIO(app, async_mode='gevent')
 
 from routes.home import home_blueprint
 from routes.chat import chat_blueprint

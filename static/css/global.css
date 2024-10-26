@@ -4,35 +4,47 @@
     box-sizing: border-box;
     font-size: max(100%, 1.2rem);
 }
+
 :root {
-    --black: #080808;
-	--light-black: #4e4e4e;
-	--white: #fff;
-    --gray: #777;
-    --light-gray: #999
+    --primary-dark: #1E1E2C;
+    --primary-light: #2D2D44;
+    --accent: #FF6B6B;
+    --text-light: #E1E1E6;
+    --text-dark: #333333;
+    --gray: #8C8C8E;
+    --link-hover: #FFD93D;
 }
+
 main {
-    background-color: var(--light-black);
+    background-color: var(--primary-light);
     min-height: 90vh;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
+
 .home, .about {
     justify-content: space-evenly;
 }
+
 a {
     text-decoration: none;
     display: block;
     clear: both;
-    color: var(--light-gray)
+    color: var(--text-light);
 }
+
+a:hover {
+    color: var(--link-hover);
+}
+
 .nav-link, .nav-link-active, .conversar, .conversar:hover, .nav-brand {
     margin: 5px;
     font-size: 20px;
-    color: var(--black);
+    color: var(--text-light);
 }
+
 h1, p {
-    color: var(--black);
+    color: var(--text-light);
     text-align: center;
 }

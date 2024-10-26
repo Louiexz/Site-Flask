@@ -1,8 +1,10 @@
+.navbar, .item {
+    display: flex;
+    align-items: center;
+}
 .navbar {
     background-color: var(--primary-dark);
     padding: 10px 20px;
-    display: flex;
-    align-items: center;
     justify-content: space-between;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
@@ -12,7 +14,10 @@
     margin-right: 10px;
     border-radius: 5px;
 }
-
+.item {
+    padding: 5px;
+    background-color: var(--primary-light);
+}
 .nav-link, .nav-link-active {
     color: var(--text-light);
     padding: 8px 12px;

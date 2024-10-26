@@ -9,10 +9,10 @@
     --primary-dark: #1E1E2C;
     --primary-light: #2D2D44;
     --accent: #FF6B6B;
+    --link-hover: #FFD93D;
     --text-light: #E1E1E6;
     --text-dark: #333333;
     --gray: #8C8C8E;
-    --link-hover: #FFD93D;
 }
 
 main {

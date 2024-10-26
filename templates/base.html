@@ -3,7 +3,7 @@
     <head>
         <meta charset=UTF-8>
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="icon" type="image/png" href="{{url_for('static', filename='img/bubble-chat.png')}}" />
+        <link rel="icon" type="image/png" href="{{url_for('static', filename='img/chatzin-icon.png')}}" />
         
         <title>Chatzin - {% block title %}{% endblock %}</title>
 
@@ -16,13 +16,14 @@
     </head>
     <body>
         <nav class="navbar chat">
-            <div class="navbar item">
-                <a href="/" class="nav-brand">
-                    <img id="brand-img" src="{{url_for('static', filename='img/bubble-chat.png')}}" author=//www.freepik.com>Chatzin</a>
+            <div class="navbar">
+                <a href="/" class="nav-brand item">
+                    <img id="brand-img" src="{{url_for('static', filename='img/chatzin-icon.png')}}" author=//www.freepik.com>Chatzin
+                </a>
                 <a class="nav-link" href="/">Início</a>
                 <a class=nav-link href="/chat">Chat</a>
+                <a class=nav-link href="/about">Sobre</a>
             </div>
-            <a class=nav-link href="/about">Sobre</a>
         </nav>
         {% block main %}{% endblock %}
         <footer id="contato">

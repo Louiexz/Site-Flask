@@ -4,7 +4,6 @@
     margin: 0 auto;
     max-width: 1200px; /* Limite máximo para melhor legibilidade em telas grandes */
 }
-
 #area-chat {
     background-color: var(--primary-light);
     min-height: 75vh;
@@ -12,32 +11,27 @@
     overflow-y: auto;
     padding: 15px;
     border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 1px 4px 10px 8px rgba(0, 0, 0, 0.1);
 }
-
 #interacao {
     text-align: center;
     padding: 15px 0;
 }
-
 #mensagem, #envio {
     position: relative;
     margin-top: 10px;
 }
-
 #conectar {
     position: relative;
     top: 0;
 }
-
 #mensagem {
-    width: 90%;
+    width: 80%;
     padding: 10px;
     font-size: 1rem;
     border-radius: 5px;
     border: 1px solid var(--gray);
 }
-
 #envio {
     position: relative;
     top: -60px;
@@ -51,7 +45,6 @@
     border: none;
     transition: background-color 0.3s ease;
 }
-
 #envio:hover {
     background-color: var(--link-hover);
 }
